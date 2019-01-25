@@ -790,8 +790,8 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
         }
 
         dragPinchManager.enable();
-
-        callbacks.callOnLoadComplete(pdfFile.getPagesCount());
+        SizeF size = pdfFile.getPageSize(defaultPage);
+        callbacks.callOnLoadComplete(pdfFile.getPagesCount(), size.getWidth(), size.getHeight());
 
         jumpTo(defaultPage, false);
     }
