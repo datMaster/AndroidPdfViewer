@@ -1,7 +1,25 @@
 
-# Looking for new maintainer!
+# WARNING!
+This fork was made in order to migrate the library to AndroidX. Add-ons and updates will not appear.
 
+[![Release](https://jitpack.io/v/polesapart/AndroidPdfViewer.svg)](https://jitpack.io/#polesapart/AndroidPdfViewer)
 
+Add to _build.gradle_:
+```groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+Add the dependency
+```groovy
+implementation 'com.github.polesapart:AndroidPdfViewer:Tag'
+```
+
+---
+### Original description
 # Android PdfViewer
 
 __AndroidPdfViewer 1.x is available on [AndroidPdfViewerV1](https://github.com/barteksc/AndroidPdfViewerV1)
