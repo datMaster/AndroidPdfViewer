@@ -2,7 +2,7 @@
 # WARNING!
 This fork was made in order to migrate the library to AndroidX. Add-ons and updates will not appear.
 
-[![Release](https://jitpack.io/v/TalbotGooday/AndroidPdfViewer.svg)](https://jitpack.io/#TalbotGooday/AndroidPdfViewer)
+[![Release](https://jitpack.io/v/polesapart/AndroidPdfViewer.svg)](https://jitpack.io/#polesapart/AndroidPdfViewer)
 
 Add to _build.gradle_:
 ```groovy
@@ -15,7 +15,7 @@ allprojects {
 ```
 Add the dependency
 ```groovy
-implementation 'com.github.TalbotGooday:AndroidPdfViewer:Tag'
+implementation 'com.github.polesapart:AndroidPdfViewer:Tag'
 ```
 
 ---
