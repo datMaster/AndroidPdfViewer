@@ -258,8 +258,6 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
     public PDFView(Context context, AttributeSet set) {
         super(context, set);
 
-        renderingHandlerThread = new HandlerThread("PDF renderer");
-
         if (isInEditMode()) {
             return;
         }
@@ -474,6 +472,12 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
             return;
         }
         animationManager.computeFling();
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        renderingHandlerThread = new HandlerThread("PDF renderer");
     }
 
     @Override
