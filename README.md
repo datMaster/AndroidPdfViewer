@@ -1,6 +1,5 @@
 
-# WARNING!
-This fork was made in order to migrate the library to AndroidX. Add-ons and updates will not appear.
+Applied relevant merge requests from upstream. This fork may or may not be maintained in the future - helpers are welcome.
 
 [![Release](https://jitpack.io/v/polesapart/AndroidPdfViewer.svg)](https://jitpack.io/#polesapart/AndroidPdfViewer)
 
