@@ -17,6 +17,12 @@ Add the dependency
 implementation 'com.github.polesapart:AndroidPdfViewer:Tag'
 ```
 
+e.g.:
+
+```groovy
+implementation 'com.github.polesapart:AndroidPdfViewer:3.2.0-beta.2'
+
+```
 ---
 ### Original description
 # Android PdfViewer
@@ -28,6 +34,11 @@ so if you don't like 2.x version, try 1.x.__
 Library for displaying PDF documents on Android, with `animations`, `gestures`, `zoom` and `double tap` support.
 It is based on [PdfiumAndroid](https://github.com/barteksc/PdfiumAndroid) for decoding PDF files. Works on API 11 (Android 3.0) and higher.
 Licensed under Apache License 2.0.
+
+## What's new in 3.2.0-beta.2 (PolesApart)?
+* Merge PRs #743 #824 #827 #835 #846 #808 #885
+* Update to AS 4.0 dependencies
+* Port to androidx
 
 ## What's new in 3.2.0-beta.1?
 * Merge PR #714 with optimized page load

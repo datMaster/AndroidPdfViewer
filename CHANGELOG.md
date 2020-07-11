@@ -1,3 +1,8 @@
+## 3.2.0-beta.2 (2020-07-11) (PolesApart)
+* Merge PRs #743 #824 #827 #835 #846 #808 #885
+* Update to AS 4.0 dependencies
+* Port to androidx
+
 ## 3.2.0-beta.1 (2019-08-18)
 * Merge PR #714 with optimized page load
 * Merge PR #776 with fix for max & min zoom level
