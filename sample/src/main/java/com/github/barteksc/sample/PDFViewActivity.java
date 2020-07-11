@@ -30,12 +30,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.github.barteksc.pdfviewer.listener.OnPageErrorListener;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
-import com.github.barteksc.pdfviewer.util.FitPolicy;
+import com.github.polesapart.pdfviewer.PDFView;
+import com.github.polesapart.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.polesapart.pdfviewer.listener.OnPageChangeListener;
+import com.github.polesapart.pdfviewer.listener.OnPageErrorListener;
+import com.github.polesapart.pdfviewer.scroll.DefaultScrollHandle;
+import com.github.polesapart.pdfviewer.util.FitPolicy;
 import com.shockwave.pdfium.PdfDocument;
 
 import org.androidannotations.annotations.AfterViews;
@@ -191,7 +191,7 @@ public class PDFViewActivity extends AppCompatActivity implements OnPageChangeLi
     }
 
     @Override
-    public void loadComplete(int nbPages) {
+    public void loadComplete(int nbPages, float pageWidth, float pageHeight) {
         PdfDocument.Meta meta = pdfView.getDocumentMeta();
         Log.e(TAG, "title = " + meta.getTitle());
         Log.e(TAG, "author = " + meta.getAuthor());
