@@ -17,10 +17,10 @@ Add the dependency
 implementation 'com.github.polesapart:AndroidPdfViewer:Tag'
 ```
 
-e.g.:
-
+or e.g.:
 ```groovy
-implementation 'com.github.polesapart:AndroidPdfViewer:3.2.0-beta.2'
+ext.android_pdf_viewer_version = '3.2.1'
+implementation "com.github.polesapart:AndroidPdfViewer:$android_pdf_viewer_version"
 
 ```
 ---
