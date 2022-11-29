@@ -19,7 +19,7 @@ implementation 'com.github.polesapart:AndroidPdfViewer:Tag'
 
 or e.g.:
 ```groovy
-ext.android_pdf_viewer_version = '3.2.1'
+ext.android_pdf_viewer_version = '3.2.3'
 implementation "com.github.polesapart:AndroidPdfViewer:$android_pdf_viewer_version"
 
 ```

@@ -254,10 +254,18 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
     /** Holds last used Configurator that should be loaded when view has size */
     private Configurator waitingDocumentConfigurator;
 
+    /** Delegate constructor */
+    public PDFView(Context context) {
+        super(context);
+        commonInit(context);
+    }
     /** Construct the initial view */
     public PDFView(Context context, AttributeSet set) {
         super(context, set);
+        commonInit(context);
+    }
 
+    private void commonInit(Context context) {
         if (isInEditMode()) {
             return;
         }
