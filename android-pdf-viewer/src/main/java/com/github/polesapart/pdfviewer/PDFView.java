@@ -40,6 +40,7 @@ import androidx.core.view.NestedScrollingChildHelper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.github.polesapart.pdfviewer.exception.PageRenderingException;
@@ -254,10 +255,12 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
     /** Holds last used Configurator that should be loaded when view has size */
     private Configurator waitingDocumentConfigurator;
 
-    /** Delegate constructor */
+    /** A constructor */
     public PDFView(Context context) {
         super(context);
         commonInit(context);
+        /* Instate sane defaults */
+        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
     /** Construct the initial view */
     public PDFView(Context context, AttributeSet set) {
