@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.github.polesapart.pdfviewer.PDFView;
 import com.github.polesapart.pdfviewer.R;
+import com.github.polesapart.pdfviewer.listener.OnTouchEventListenerPdf;
 import com.github.polesapart.pdfviewer.util.Util;
 
 public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle {
@@ -28,6 +29,8 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
     private boolean inverted;
     private PDFView pdfView;
     private float currentPos;
+
+    private OnTouchEventListenerPdf onTouchEventListenerPdf;
 
     private Handler handler = new Handler();
     private Runnable hidePageScrollerRunnable = new Runnable() {
@@ -49,6 +52,10 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
         setVisibility(INVISIBLE);
         setTextColor(Color.BLACK);
         setTextSize(DEFAULT_TEXT_SIZE);
+    }
+
+    public void setOnTouchEventListenerPdf(OnTouchEventListenerPdf listener) {
+        this.onTouchEventListenerPdf = listener;
     }
 
     @Override
@@ -206,6 +213,10 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+
+        if (onTouchEventListenerPdf != null) {
+            onTouchEventListenerPdf.onTouchEvent(event);
+        }
 
         if (!isPDFViewReady()) {
             return super.onTouchEvent(event);

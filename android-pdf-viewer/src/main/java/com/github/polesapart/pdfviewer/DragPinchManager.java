@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 
+import com.github.polesapart.pdfviewer.listener.OnTouchEventListenerPdf;
 import com.github.polesapart.pdfviewer.model.LinkTapEvent;
 import com.github.polesapart.pdfviewer.scroll.ScrollHandle;
 import com.github.polesapart.pdfviewer.util.SnapEdge;
@@ -43,6 +44,7 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
 
     private GestureDetector gestureDetector;
     private ScaleGestureDetector scaleGestureDetector;
+    private OnTouchEventListenerPdf onTouchEventListenerPdf;
 
     private boolean scrolling = false;
     private boolean scaling = false;
@@ -291,10 +293,18 @@ class DragPinchManager implements GestureDetector.OnGestureListener, GestureDete
         scaling = false;
     }
 
+    public void setOnTouchEventListenerPdf(OnTouchEventListenerPdf listener) {
+        this.onTouchEventListenerPdf = listener;
+    }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (!enabled) {
             return false;
+        }
+
+        if (onTouchEventListenerPdf != null) {
+            onTouchEventListenerPdf.onTouchEvent(event);
         }
 
         boolean retVal = scaleGestureDetector.onTouchEvent(event);

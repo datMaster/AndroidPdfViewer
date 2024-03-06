@@ -56,6 +56,7 @@ import com.github.polesapart.pdfviewer.listener.OnPageErrorListener;
 import com.github.polesapart.pdfviewer.listener.OnPageScrollListener;
 import com.github.polesapart.pdfviewer.listener.OnRenderListener;
 import com.github.polesapart.pdfviewer.listener.OnTapListener;
+import com.github.polesapart.pdfviewer.listener.OnTouchEventListenerPdf;
 import com.github.polesapart.pdfviewer.model.PagePart;
 import com.github.polesapart.pdfviewer.scroll.ScrollHandle;
 import com.github.polesapart.pdfviewer.source.AssetSource;
@@ -301,6 +302,10 @@ public class PDFView extends RelativeLayout implements NestedScrollingChild {
         // Start decoding document
         decodingAsyncTask = new DecodingAsyncTask(docSource, password, userPages, this, pdfiumCore);
         decodingAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    public void setOnTouchEventListenerPdf(OnTouchEventListenerPdf listener) {
+        this.dragPinchManager.setOnTouchEventListenerPdf(listener);
     }
 
     /**
